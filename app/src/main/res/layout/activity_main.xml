@@ -1,0 +1,186 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 게임 종류 입력 필드 -->
+    <TextView
+        android:id="@+id/textViewGameType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="게임종류" />
+
+    <EditText
+        android:id="@+id/editTextGameName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/textViewGameType"
+        android:layout_alignBaseline="@id/textViewGameType"
+        android:hint="게임 이름" />
+
+    <TextView
+        android:id="@+id/textViewGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewGameType"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="목표" />
+
+    <EditText
+        android:id="@+id/editTextGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextGameName"
+        android:layout_alignBaseline="@id/textViewGoal"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="-6dp"
+        android:layout_toEndOf="@id/textViewGoal"
+        android:hint="오늘의 목표" />
+
+    <TextView
+        android:id="@+id/textViewAchievement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewGoal"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="달성" />
+
+    <EditText
+        android:id="@+id/editTextProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextGoal"
+        android:layout_alignBaseline="@id/textViewAchievement"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="-11dp"
+        android:layout_toEndOf="@id/textViewAchievement"
+        android:hint="진행도" />
+
+    <!-- 타이머 시작/정지/재개 버튼 -->
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="시작"
+        android:layout_below="@id/editTextProgress"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- 타이머 표시 -->
+    <TextView
+        android:id="@+id/textViewTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextProgress"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
+        android:layout_toEndOf="@id/buttonStart"
+        android:text="00:00"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonStart"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="초기화" />
+
+    <Button
+        android:id="@+id/buttonSuccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonStart"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/buttonReset"
+        android:text="성공" />
+
+    <Button
+        android:id="@+id/buttonFail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonStart"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/buttonSuccess"
+        android:text="실패" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSearch"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="저장" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextSearch"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_toEndOf="@id/buttonSave"
+        android:text="삭제" />
+
+    <!-- 검색어 입력 필드 -->
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSuccess"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="7dp"
+        android:layout_toEndOf="@+id/buttonSearch"
+        android:hint="검색어 입력" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonReset"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="검색" />
+
+    <!-- 로그 표시 -->
+    <TextView
+        android:id="@+id/textViewLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonSuccess"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="133dp"
+        android:text="로그" />
+
+    <!-- 하단 네비게이션 레이아웃 -->
+    <LinearLayout
+        android:id="@+id/navigationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/buttonGame"
+            android:layout_width="wrap_content"
+            android:layout_height="85dp"
+            android:text="게임" />
+
+        <Button
+            android:id="@+id/buttonCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="85dp"
+            android:text="달력" />
+    </LinearLayout>
+</RelativeLayout>
